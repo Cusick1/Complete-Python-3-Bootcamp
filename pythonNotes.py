@@ -398,5 +398,60 @@ def func():
 
 # dont do this ^ often just pass x as parameter and then set x = func(x)
 
+#***********************************************************************************
+# Section 7: Milestone Project
 
+# Displaying information
+
+row1=[' ',' ',' ']
+row2=[' ',' ',' ']
+row3=[' ',' ',' ']
+
+def display(row1, row2, row3):
+    print(row1)
+    print(row2)
+    print(row3)
+
+display(row1,row2,row3)
+
+# User Input and Validation
+def take_turn():    
+    index = int(input("Choose an index position: "))
+    while index.isdigit() == False:
+        print('Sorry that is not an integer.')
+        index = int(input('Please enter an integer for the index position: '))
+    return index
+
+
+from IPython.display import clear_output
+clear_output()
+
+def take_turn():
+    acceptable_values = [0,1,2]
+    index_flag = False
+    index = 'Index'
+    while index.isdigit() == False or index_flag == False:
+        index = input("Choose an index position (0-2): ")
+        
+        if index.isdigit() == False:
+            clear_output()
+            print('Sorry that is not an integer.')
+        
+        if index.isdigit():
+            if int(index) in acceptable_values:
+                return int(index)
+            else:
+                print('Sorry that integer is not in the accepted range!')
+
+from IPython.display import clear_output
+clear_output()
+def get_index():
+    index = 'default'
+    acceptable_values = ['0','1','2']
+    while index not in acceptable_values:
+        index = input('Choose an index position (0-2): ')
+        if index not in acceptable_values:
+            clear_output()
+            print('You did not enter 0, 1, or 2')
+    return int(index)
 
