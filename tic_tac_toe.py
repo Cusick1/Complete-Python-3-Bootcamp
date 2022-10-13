@@ -21,7 +21,7 @@ def start_game():
         if start != 'Y':
             print("Sorry I don't quite understand.")
     
-    while playing or turn < 10:
+    while playing and turn < 10:
         if turn%2 == 0:
             player = player2
         else:
@@ -33,13 +33,12 @@ def start_game():
         # os.system('cls')
         # Fix clear screen
         print("******************************************")
-        print("                                          ")
         print("******************************************")
         playing = still_playing(board, player)
-        turn += 1
         if turn > 9:
             print("Looks like a draw. GG")
-
+        turn += 1
+        
         
         
 
